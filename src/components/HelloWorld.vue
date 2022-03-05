@@ -8,8 +8,7 @@
               <button class="btn btn-danger" @click="eliminar"> Eliminar </button>
             </div>
 
-            <div v-for="(suc) in sucursales" :key="suc">          
-               
+            <div v-for="(suc) in sucursales" :key="suc">                         
               <div class="border border-4">
                 {{suc.name}}
                 <p>
@@ -44,16 +43,20 @@
             },
             eliminar(){
               this.sucursales.pop()
+              if(this.sucursales.length == 0){
+                alert("No hay mas sucursales")
+              }
             },
 
             cambiarStateconection(){
               this.sucursales.stateconection = !this.sucursales.stateconection
+              console.log(this.sucursales.stateconection)
             }
 
         },
         created(){
           let funcionInterval;
-          setInterval(this.cambiarStateconection,100);
+          setInterval(this.cambiarStateconection,2000);
         } 
 
     }
