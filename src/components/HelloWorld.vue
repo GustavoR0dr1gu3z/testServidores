@@ -6,7 +6,7 @@
               <div class="border border-4">
                 {{suc.name}}
                 <p>
-                  <button :class="{conectado: suc.stateconection == true, desconectado: suc.stateconection == false}" disabled>Status</button>                    
+                  <button :class="{conectado: suc.stateconection == true, desconectado: suc.stateconection == false}" disabled></button>                    
                 </p>
                 
               </div>
@@ -63,6 +63,16 @@
       height: 100px;
       margin-top: 10px;
 
+    }
+
+    button{
+      background-color: #f8f8f8;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 80px;
+      height: 30px;
+      margin-top: 10px;
+      margin-left: 10px;
     }
 
     .desconectado{
