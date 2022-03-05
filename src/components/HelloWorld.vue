@@ -2,9 +2,12 @@
     <div class="estadistica">      
 
             <div class="botones">
-              <p> Agregar </p>
-              <button class="btn btn-success" @click="agregar"> Agregar </button>
-              <p> Eliminar </p>
+              <form v-on:submit="agregar">
+                <input v-model="inputName" type="text" placeholder="Nombre" required>
+                <input v-model="inputConnect" type="text" placeholder="True/False " required>
+                <input type="submit" value="Agregar" class="btn btn-success">    
+              </form>            
+              <p>Eliminar Sucursal:</p>  
               <button class="btn btn-danger" @click="eliminar"> Eliminar </button>
             </div>
 
@@ -40,6 +43,7 @@
         methods: {
             agregar(){
               this.sucursales.push({id:this.sucursales.length+1, name:"Sucursal "+(this.sucursales.length+1), stateconection:true})
+
             },
             eliminar(){
               this.sucursales.pop()
@@ -81,6 +85,15 @@
       background-color: #f2f2f2;
     }
 
+  form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;  
+  }
+
     .botones{
       display: flex;
       justify-content: space-around;
@@ -93,6 +106,9 @@
       background-color: #f2f2f2;
     }
 
+.botones > p, button{
+  margin: 10px;
+}
 
     .border{
       border: 1px solid #ccc;
