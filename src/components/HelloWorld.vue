@@ -38,6 +38,15 @@
             }
         },
 
+        methods: {
+            agregar(){
+              this.sucursales.push({id:this.sucursales.length+1, name:"Sucursal "+(this.sucursales.length+1), stateconection:true})
+            },
+            eliminar(){
+              this.sucursales.pop()
+            }
+
+        } 
 
     }
 
