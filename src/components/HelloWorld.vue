@@ -66,10 +66,12 @@
     }
 
     .desconectado{
+        margin-top: 20px;
         background-color: #ff0000;
     }
 
     .conectado{
+      margin-top: 20px;
         background-color: #00ff00;
     }
 
