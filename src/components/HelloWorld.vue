@@ -4,7 +4,7 @@
             <div class="botones">
               <form v-on:submit="agregar">
                 <input v-model="inputName" type="text" placeholder="Nombre" required>
-                <input v-model="inputConnect" type="text" placeholder="True/False " required>
+                <input v-model="inputConnect" type="text" placeholder="true/false" required>
                 <input type="submit" value="Agregar" class="btn btn-success">                    
               </form>
               <div class="botonRojo">
