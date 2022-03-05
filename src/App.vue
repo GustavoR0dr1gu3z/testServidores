@@ -1,26 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <div id="navv">
+    <Navbarr/>
+    <HelloWorld/>
+  </div>
+
 </template>
 
+
 <script>
+// 1er Paso: Importar el componente
+import Navbarr from './components/Navbarr.vue'
 import HelloWorld from './components/HelloWorld.vue'
 
+// 2do Paso: Exportar el componente
 export default {
-  name: 'App',
   components: {
+    Navbarr,
     HelloWorld
-  }
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
