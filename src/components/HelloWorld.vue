@@ -55,6 +55,8 @@
 
         },
         created(){
+          // Si me lo detecta en la consola, pero no hace los cambios
+          // Lo mandé ahorita para que se vea el avance, aun asi le seguire viendo cual es el error
           let funcionInterval;
           setInterval(this.cambiarStateconection,2000);
         } 
