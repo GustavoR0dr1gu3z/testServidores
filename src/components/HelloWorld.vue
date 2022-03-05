@@ -63,14 +63,14 @@
             },
 
             cambiarStateconection(){
-              this.sucursales.stateconection = !this.sucursales.stateconection
-              console.log(this.sucursales.stateconection)
+              console.log("Cambiar");
+              this.sucursales.forEach(sucursal => {
+                sucursal.stateconection = !sucursal.stateconection
+              });
             }
 
         },
         created(){
-          // Si me lo detecta en la consola, pero no hace los cambios
-          // Lo mandé ahorita para que se vea el avance, aun asi le seguire viendo cual es el error
           let funcionInterval;
           setInterval(this.cambiarStateconection,2000);
         } 
