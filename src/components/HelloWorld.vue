@@ -5,10 +5,13 @@
               <form v-on:submit="agregar">
                 <input v-model="inputName" type="text" placeholder="Nombre" required>
                 <input v-model="inputConnect" type="text" placeholder="True/False " required>
-                <input type="submit" value="Agregar" class="btn btn-success">    
-              </form>            
-              <p>Eliminar Sucursal:</p>  
-              <button class="btn btn-danger" @click="eliminar"> Eliminar </button>
+                <input type="submit" value="Agregar" class="btn btn-success">                    
+              </form>
+              <div class="botonRojo">
+              <button class="btn btn-danger" @click="eliminar"> Eliminar </button>  
+              </div>            
+              
+              
             </div>
 
             <div v-for="(suc) in sucursales" :key="suc">                         
@@ -41,11 +44,18 @@
         },
 
         methods: {
-            agregar(){
-              this.sucursales.push({id:this.sucursales.length+1, name:"Sucursal "+(this.sucursales.length+1), stateconection:true})
-
+            agregar(e){
+              e.preventDefault();
+              
+              console.log("Agregar");
+              // Convertir el estado de conexion a boolean
+              this.sucursales.push({id:this.sucursales.length+1, name:this.inputName, stateconection:this.inputConnect == "true"})
+              
             },
-            eliminar(){
+            eliminar(e){
+              e.preventDefault();
+              //this.sucursales.pop()
+              console.log("Eliminar");
               this.sucursales.pop()
               if(this.sucursales.length == 0){
                 alert("No hay mas sucursales")
@@ -73,7 +83,6 @@
 
 <style scoped>
     .estadistica{
-        padding-top: 20px;
       display: flex;
       justify-content: space-a;
       text-align: center;
@@ -94,6 +103,16 @@
     height: 100%;  
   }
 
+  form > input{
+    width: 50%;
+    height: 50px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+
+
     .botones{
       display: flex;
       justify-content: space-around;
@@ -106,10 +125,16 @@
       background-color: #f2f2f2;
     }
 
-.botones > p, button{
-  margin: 10px;
-}
-
+  .botonRojo{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin: 20px;     
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+  }
     .border{
       border: 1px solid #ccc;
       border-radius: 4px;
