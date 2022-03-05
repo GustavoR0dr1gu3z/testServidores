@@ -44,8 +44,16 @@
             },
             eliminar(){
               this.sucursales.pop()
+            },
+
+            cambiarStateconection(){
+              this.sucursales.stateconection = !this.sucursales.stateconection
             }
 
+        },
+        created(){
+          let funcionInterval;
+          setInterval(this.cambiarStateconection,100);
         } 
 
     }
