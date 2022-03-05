@@ -63,7 +63,6 @@
             },
 
             cambiarStateconection(){
-              console.log("Cambiar");
               this.sucursales.forEach(sucursal => {
                 sucursal.stateconection = !sucursal.stateconection
               });
